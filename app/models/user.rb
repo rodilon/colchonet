@@ -4,12 +4,9 @@ class User < ActiveRecord::Base
     validates_presence_of :email, :full_name, :location, :password
     validates_confirmation_of :password
     validates_length_of :bio, minimum: 10, allow_blank: false
-    validate :email_format
+    validates_format_of :email, with: EMAIL_REGEXP
     validates_uniqueness_of :email
-    
-    private
-    
-    def email_format
-        errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
-    end
+
+    has_secure_password
+
 end

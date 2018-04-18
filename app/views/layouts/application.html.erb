@@ -30,12 +30,12 @@
 
   <div class="container">
     
-    <%= if notice.present? %>
+    <% if notice.present? %>
       <p id="notice"><%= notice %>
-    <%= end %>
-    <%= if alert.present? %>
+    <% end %>
+    <% if alert.present? %>
       <p id="alert"><%= alert %>
-    <%= end %>
+    <% end %>
 
     <%= yield %>
   

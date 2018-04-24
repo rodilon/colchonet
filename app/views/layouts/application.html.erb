@@ -16,8 +16,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <head>
-    <div class="header-wrap">
+  <header>
+    <div id="header-wrap">
       <h1><%= link_to "colcho.net", root_path %></h1>
         <nav>
           <ul>
@@ -26,9 +26,9 @@
           </ul>
         </nav>
     </div>
-  </head>
+  </header>
 
-  <div class="container">
+  <div id="content">
     
     <% if notice.present? %>
       <p id="notice"><%= notice %>

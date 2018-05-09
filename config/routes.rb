@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :rooms
-  resources :users
-
+  LOCALES = /en|pt/
+  
+  scope "(:locale)", locale: LOCALES do
+    resources :rooms
+    resources :users
+  end
+  
+  get '/locale' => 'home#index', locale: LOCALES
   root 'home#index'
 end
